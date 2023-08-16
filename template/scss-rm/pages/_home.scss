@@ -1,0 +1,592 @@
+.hab {
+    .re-head {}
+
+    &-left {
+        display: flex;
+        flex-direction: column;
+        gap: 1.6rem;
+
+        @include max($res-mobile) {
+            width: 100%;
+        }
+    }
+
+    &-right {
+        @include max($res-mobile) {
+            width: 100%;
+        }
+
+        &-inner {
+            width: calc(100% + ((100vw - 120rem) / 2));
+
+            @include min(1921px) {
+                width: calc(100% + 36rem);
+            }
+
+            @include max(1230px) {
+                width: calc(100% + 3rem);
+                margin-left: -1.5rem;
+            }
+        }
+    }
+
+    &-year {
+        font-size: 10rem;
+        display: flex;
+        flex-direction: column;
+
+        @include max-min($res-mobile, 551px) {
+            flex-direction: row;
+        }
+
+        @include max($mobile) {
+            font-size: 20vw;
+        }
+
+
+        &-title {
+            font-size: .3em;
+            font-weight: 700;
+            color: $color-pri;
+            margin-bottom: -3rem;
+        }
+
+        &-number {
+            text-align: end;
+            font-size: 1.2em;
+            line-height: 1.1;
+            font-weight: 700;
+            background-image: url(../assets/img/hba-title-br.jpg);
+            background-position: center;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-repeat: repeat-x;
+        }
+    }
+
+    &-content {
+        ul {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+
+            li {
+                position: relative;
+                padding-left: 2.4rem;
+
+                &::before {
+                    @include pseudo;
+                    background-image: url(../assets/img/tick-second.svg);
+                    width: 1.8rem;
+                    height: 1.8rem;
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                    background-position: center;
+                    left: 0;
+                    top: .3rem;
+                }
+            }
+        }
+    }
+
+    &-img {
+        @include imgPd(650, 534);
+        box-shadow: inset 12px 0px 20px 0px rgba(0, 0, 0, 0.40);
+
+        img {
+            @include imgCover;
+        }
+    }
+
+    &-as {
+        margin-top: 4rem;
+
+        @include max($mobile) {
+            margin-top: 2.4rem;
+        }
+
+        &-list {
+            --row-gap: .8rem;
+            --col-gap: .8rem;
+        }
+
+        &-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+
+            @include max($res-mobile) {
+                width: 50%;
+            }
+
+            @include max($mobile) {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .des {
+                font-weight: 600;
+                @include fz-18;
+            }
+        }
+
+        &-number {
+            @include fz-32;
+            font-weight: 700;
+            color: $color-pri;
+            display: flex;
+            align-items: center;
+            gap: .4rem;
+
+            .number {
+                @include fz-50;
+            }
+        }
+    }
+}
+
+.proce {
+    &-wrap {
+        position: relative;
+        cursor: pointer;
+
+        @include hover {
+            .proce-number {
+                -webkit-text-stroke: .1rem $color-pri;
+
+                &::before {
+                    width: 100%;
+                    z-index: 2;
+                }
+            }
+
+            .proce-name {
+                color: $color-pri;
+                margin-left: 0;
+            }
+
+            .proce-img {
+                &::before {
+                    opacity: 0;
+                }
+            }
+
+            .proce-name-rt {
+                color: $color-pri;
+
+                &::after {
+                    background-color: $color-pri;
+                }
+            }
+        }
+    }
+
+    &-img {
+        @include imgPd(740, 400);
+
+        &::before {
+            @include pseudo;
+            @include full;
+            background: linear-gradient(180deg, rgba(74, 51, 21, 0.50) 0%, rgba(74, 51, 21, 0.40) 100%);
+            z-index: 1;
+            transition: .6s ease-in-out;
+
+            @include max($res-mobile) {
+                opacity: 0.5;
+            }
+        }
+
+        img {
+            @include imgCover;
+        }
+    }
+
+    &-content {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        padding: 1.6rem;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        z-index: 2;
+    }
+
+    &-number {
+        @include fz-64;
+        font-weight: 700;
+        -webkit-text-stroke: .1rem #fff;
+        color: transparent;
+        position: relative;
+
+        &::before {
+            content: attr(data-number);
+            top: 0;
+            left: 0;
+            width: 0;
+            position: absolute;
+            color: $color-pri;
+            overflow: hidden;
+            transition: .6s $cubic;
+
+
+        }
+
+        @include max($res-mobile) {
+            -webkit-text-stroke: .1rem $color-pri;
+            color: $color-pri;
+        }
+    }
+
+    &-name {
+        @include fz-30;
+        font-weight: 700;
+        position: relative;
+        z-index: 2;
+        margin-left: -3rem;
+        color: white;
+        transition: .6s ease-in-out;
+
+        @include max($res-mobile) {
+            margin-left: 0;
+            color: $color-pri;
+        }
+    }
+
+    &-name-rt {
+        @include fz-20;
+        font-weight: 700;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        writing-mode: vertical-lr;
+        transform: rotate(180deg);
+        color: white;
+        z-index: 2;
+        padding: 1.6rem;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        transition: .6s $cubic;
+
+        @include max($res-mobile) {
+            color: $color-pri;
+        }
+
+        &::after {
+            display: block;
+            content: '';
+            width: .2rem;
+            height: 2.6rem;
+            background-color: white;
+            transition: .6s $cubic;
+
+            @include max($res-mobile) {
+                background-color: $color-pri;
+            }
+        }
+    }
+}
+
+
+.certi {
+    &-slider {
+        width: calc(100% + ((100vw - 120rem) / 2));
+        padding-bottom: 8rem;
+
+        @include max(1230px) {
+            width: calc(100% + 1.5rem);
+        }
+
+        .swiper {
+            &-wrapper {
+                align-items: center;
+            }
+
+            &-slide {
+                &-active {
+                    .certi-wrap {
+                        padding: 0;
+                    }
+
+                    .certi-name {
+                        @include show;
+                    }
+                }
+            }
+        }
+
+    }
+
+    &-br {
+        position: absolute;
+        right: 0;
+        left: -10rem;
+        bottom: 0;
+        height: 50%;
+        z-index: -1;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    &-wrap {}
+
+    &-name {
+        font-weight: 700;
+        text-align: center;
+        @include fz-24;
+        margin-top: 1.6rem;
+        text-transform: uppercase;
+        transition: .6s $cubic;
+    }
+
+    &-img {
+        img {
+            width: 100%;
+            display: block;
+        }
+    }
+}
+
+.philo {
+    overflow: hidden;
+    position: relative;
+
+    .container {
+        max-width: 100%;
+    }
+
+    &-br {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: -1;
+        height: 40%;
+
+        img {
+            width: 100%;
+            display: block;
+            height: 100%;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    .head {
+        color: white;
+
+        .t-title-sub {
+
+            &::before,
+            &::after {
+                background-color: white;
+            }
+        }
+
+        .t-title {
+            color: white;
+        }
+    }
+
+    &-slider {
+        width: 100rem;
+        max-width: 100%;
+        // margin: 0 auto;
+
+        .swiper {
+            overflow: visible;
+
+            &-slide {
+                // opacity: 0;
+                // transition: 1s $cubic;
+                overflow: visible;
+
+                &-active {
+                    .philo-content {
+                        transform: translate(0);
+                        opacity: 1;
+                        transition: 1.2s $cubic;
+
+                    }
+
+                    .philo-box {
+                        transform: translateX(100%);
+                        opacity: 0;
+                    }
+                }
+
+                &-next {
+                    // .philo-box {
+                    //     left: unset;
+                    //     right: 0;
+                    // }
+
+                }
+
+                &-active,
+                &-prev,
+                &-next {
+                    opacity: 1;
+                }
+
+                &-prev {
+                    .philo-img {
+                        // transform: translateX(100%);
+                    }
+                }
+            }
+        }
+    }
+
+    &-row {
+        --row-gap: 0;
+        --col-gap: 0;
+    }
+
+    &-col {
+        &:nth-child(1) {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            @include max(750px) {
+                display: none;
+            }
+        }
+
+        &:nth-child(2) {
+            width: 45rem;
+
+            @include max(800px) {
+                width: 40rem;
+            }
+
+            @include max(750px) {
+                width: 100%;
+            }
+        }
+    }
+
+    &-content {
+        padding: 6rem 2.4rem;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 1.6rem;
+        box-shadow: 0px 4px 40px 0px rgba(163, 120, 75, 0.20);
+        border: .1rem solid $color-pri;
+        background-color: white;
+        // opacity: 0;
+        transition: .4s $cubic;
+        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+
+        @include min(751px) {
+            height: calc(100% + 5rem);
+            margin-top: -2.5rem;
+        }
+
+
+        &-inner {
+            ul {
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+
+                li {
+                    position: relative;
+                    padding-left: 2.4rem;
+
+                    &::before {
+                        @include pseudo;
+                        background-image: url(../assets/img/tick-second.svg);
+                        width: 1.6rem;
+                        height: 1.6rem;
+                        background-repeat: no-repeat;
+                        background-size: contain;
+                        background-position: center;
+                        left: 0;
+                        top: .4rem;
+                    }
+                }
+            }
+        }
+    }
+
+    &-head {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 1rem;
+        font-size: 6.4rem;
+
+        .number {
+            font-size: 1em;
+            font-weight: 700;
+            -webkit-text-stroke: .1rem $color-pri;
+            color: transparent;
+            line-height: 1.1;
+        }
+
+        .title {
+            font-size: .4em;
+            font-weight: 700;
+            color: $color-pri;
+        }
+    }
+
+    &-img {
+        @include imgPd(1, 1);
+
+        img {
+            @include imgCover;
+        }
+    }
+
+    &-box {
+        position: absolute;
+        background-color: white;
+        right: -.2rem;
+        top: -.2rem;
+        bottom: -.2rem;
+        padding: 1.6rem;
+        font-size: 6.4rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        transition: .6s $cubic;
+
+        &-number {
+            font-size: 1em;
+            font-weight: 700;
+            -webkit-text-stroke: .1rem $color-pri;
+            color: transparent;
+            line-height: 1.1;
+        }
+
+        &-name {
+            font-size: .4em;
+            font-weight: 700;
+            color: $color-pri;
+            writing-mode: vertical-rl;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+
+            &::before {
+                content: '';
+                display: block;
+                height: 2rem;
+                width: .2rem;
+                background-color: $color-pri;
+            }
+        }
+    }
+}

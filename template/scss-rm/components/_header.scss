@@ -1,0 +1,158 @@
+.hd {
+    height: var(--size-hd);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 50;
+    transition: .3s ease-in-out;
+
+    &-wr {
+        display: flex;
+        align-items: center;
+        height: 100%;
+        justify-content: space-between;
+    }
+
+    &::before {
+        @include pseudo;
+        @include full;
+        z-index: -1;
+        background-color: $color-third;
+        // backdrop-filter: blur(50px);
+        transition: .3s ease-in-out;
+        opacity: 0;
+    }
+
+    .custom-logo-link {
+        @include mid;
+        display: flex;
+        width: 26.8rem;
+
+        @include max($mobile) {
+            width: 22rem;
+        }
+
+        img {
+            display: block;
+            width: 100%;
+        }
+    }
+
+    &.sticky {
+        height: 6rem;
+
+        &::before {
+            opacity: 1;
+        }
+
+        .hd-burger.active {
+            top: 1.5rem;
+        }
+    }
+
+    &-burger {
+        &.active {
+            position: fixed;
+            top: calc((var(--size-hd) - 4.6rem) / 2);
+            z-index: 150;
+
+            @include max($mobile) {
+                top: calc((var(--size-hd) - 4rem) / 2);
+            }
+        }
+    }
+}
+
+.lg {
+    font-size: 1.4rem;
+    position: relative;
+    margin-left: auto;
+
+    &::before {
+        @include pseudo;
+        top: 100%;
+        height: 1rem;
+        left: 0;
+        width: 100%;
+    }
+
+    &:hover {
+        .lg-list {
+            @include show;
+        }
+    }
+
+    &-head {
+        display: flex;
+        align-items: center;
+        gap: .6rem;
+        padding: .4rem;
+        padding-right: 1.2rem;
+        border: .1rem solid $color-second;
+        border-radius: 100rem;
+
+        @include max($mobile) {
+            width: 4rem;
+            height: 4rem;
+            padding: 0;
+            justify-content: center;
+        }
+
+        img {
+            width: 2.2rem;
+            height: 2.2rem;
+            flex-shrink: 0;
+        }
+
+        .text {
+            color: $color-second;
+            position: relative;
+            top: .1rem;
+
+            @include max($mobile) {
+                display: none;
+            }
+        }
+    }
+
+    &-list {
+        position: absolute;
+        top: calc(100% + 1rem);
+        border: .1rem solid $color-second;
+        border-radius: 100rem;
+        // background-color: white;
+        @include hidden(0, -1rem);
+        transition: .3s ease-in-out;
+    }
+
+    &-link {
+        display: flex;
+        align-items: center;
+        gap: .4rem;
+        padding: .4rem;
+        padding-right: 1.2rem;
+
+        @include max($mobile) {
+            padding: 0;
+            width: 4rem;
+            height: 4rem;
+            justify-content: center;
+        }
+
+        img {
+            width: 2.2rem;
+            height: 2.2rem;
+        }
+
+        .text {
+            color: $color-second;
+            position: relative;
+            top: .1rem;
+
+            @include max($mobile) {
+                display: none;
+            }
+        }
+    }
+}

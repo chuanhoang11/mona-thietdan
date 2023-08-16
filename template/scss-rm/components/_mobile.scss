@@ -1,0 +1,160 @@
+// --------------------------------------
+.mobile {
+    position: fixed;
+    z-index: 140;
+    height: 100vh;
+    width: 77rem;
+    left: -100%;
+    background: $color-third;
+    top: 0;
+    // top: 0;
+    // left: 0;
+    // bottom: 0;
+    // min-width: 77rem;
+    // width: 77rem;
+    // box-shadow: 0px 10px 24px rgba(0, 0, 0, 0.05);
+    // @include transition(0.4s, linear);
+    // transform: translateX(-110%);
+
+    // @include max($mobile) {
+    //     width: 70%;
+    //     min-width: initial;
+    // }
+    @include max(1230px) {
+        width: 40rem;
+    }
+
+    @include max($mobile) {
+        width: 32rem;
+    }
+
+    &.sticky {
+        top: 0;
+    }
+
+    &.open {
+        transform: translateX(0);
+    }
+
+
+
+    &-con {
+        width: 100%;
+        height: 100%;
+        @include flex;
+        flex-direction: column;
+        padding-top: var(--size-hd);
+    }
+
+    &-heading {
+        font-size: 1.8rem;
+        line-height: 1.5;
+        color: $color-pri;
+        font-weight: 700;
+        margin-bottom: 2rem;
+        text-transform: uppercase;
+    }
+
+    &-overlay {
+        @include full-fixed;
+        z-index: 100;
+        background-color: rgba(0, 0, 0, 0.3);
+        transition: .6s $cubic;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateX(-110%);
+        border-top: 1px solid $color-border-01;
+        top: 0;
+
+        &.sticky {
+            top: 0;
+        }
+
+        &.open {
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(0);
+        }
+    }
+
+    &-wr {
+
+        position: relative;
+        margin-left: calc((100vw - 123rem) / 2);
+        overflow-y: auto;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+
+        @include max(1230px) {
+            margin-left: 1.5rem;
+        }
+    }
+
+    &-nav {
+        margin: auto 0;
+    }
+
+    &-list {
+        margin-bottom: 2rem;
+    }
+
+    &-content {
+        padding: 2.4rem 1.6rem;
+    }
+
+
+
+
+    &-close {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        width: 3.5rem;
+        height: 3.5rem;
+        border: 1px solid $color-pri;
+        @include mid-flex;
+        cursor: pointer;
+        background-color: white;
+
+        &:hover .icon {
+            transform: rotate(360deg);
+        }
+
+        .icon {
+            transition: 0.6s ease-in-out;
+            font-weight: 500;
+            font-size: 1.8rem;
+            color: $color-pri;
+        }
+    }
+
+    &-fl {
+        .fw-6 {
+            margin-bottom: 0.8rem;
+            margin-bottom: 0.8rem;
+            display: inline;
+            width: fit-content;
+            font-size: 1.4rem;
+        }
+
+        .mobile-text {
+            display: inline;
+            font-size: 1.4rem;
+        }
+
+        .dot {
+            display: none;
+        }
+    }
+
+    &-td {
+        margin: 2rem 0;
+        position: relative;
+        left: -10rem;
+
+        img {
+            display: block;
+        }
+    }
+}

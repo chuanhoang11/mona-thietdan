@@ -1,0 +1,45 @@
+// .breadcrumb {
+//     padding: 1.2rem 0;
+
+//     &-list {
+//         @include flex;
+//         align-items: center;
+//         flex-wrap: wrap;
+//         overflow: hidden;
+//         gap: .8rem;
+//     }
+
+//     &-item {
+//         color: rgba(0, 0, 0, 0.45);
+//         font-size: 1.4rem;
+//         display: flex;
+//         align-items: center;
+//         gap: .8rem;
+
+//         &:not(:first-child) {
+//             &::before {
+//                 display: inline-block;
+//                 content: '';
+//                 width: 1.2rem;
+//                 height: .1rem;
+//                 border-radius: 100rem;
+//                 background-color: rgba(0, 0, 0, 0.45);
+//                 vertical-align: middle;
+//             }
+//         }
+
+//         &:last-child {
+//             color: $color-second;
+//             pointer-events: none;
+//         }
+
+//         @include hover {
+//             color: $color-second;
+//         }
+//     }
+
+//     &-link {
+//         color: inherit;
+//         transition: .2s ease-in-out;
+//     }
+// }

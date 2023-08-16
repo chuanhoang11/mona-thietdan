@@ -1,0 +1,70 @@
+.sbtn {
+    @include mid-flex;
+    width: fit-content;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 100rem;
+    font-weight: 500;
+    @include transition(0.5s, ease);
+    overflow: hidden;
+    position: relative;
+    gap: 1rem;
+    color: white;
+    font-size: 1.4rem;
+    @include font-pri;
+    border: .1rem solid $color-second;
+    padding-right: 1.2rem;
+
+    >* {
+        position: relative;
+        z-index: 2;
+    }
+
+    &-inner {
+        display: block;
+        padding: 1.1rem 1.6rem;
+        position: relative;
+
+        &::after {
+            position: absolute;
+            content: "";
+            width: 0;
+            height: 100%;
+            top: 0;
+            right: 0;
+            background: $color-pri-ln;
+            transition: all 0.3s ease;
+            z-index: 1;
+            left: 0;
+            width: 100%;
+            border-radius: 0 100rem 100rem 0;
+        }
+
+        >* {
+            position: relative;
+            z-index: 2;
+        }
+    }
+
+    i {
+        transition: .3s ease-in-out;
+        transform: rotate(-45deg);
+        color: $color-second;
+    }
+
+    .text {}
+
+
+    @include hover {
+        i {
+            transform: rotate(0);
+        }
+
+        .sbtn-inner {
+            &::after {
+                left: 0;
+                width: 140%;
+            }
+        }
+    }
+}

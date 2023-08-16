@@ -1,0 +1,167 @@
+// card layout
+.card-layout {
+  .card-item {
+    width: 33.3%;
+
+    @include max(800px) {
+      width: 50%;
+    }
+
+    @include max(500px) {
+      width: 100%;
+    }
+
+    .card-wrapper {
+      height: 100%;
+
+      .card-head {
+        overflow: hidden;
+        border-radius: 0.6rem;
+
+        &:hover {
+          .card-img {
+            transform: scale(1.2);
+          }
+        }
+
+        .card-img {
+          transition: all 0.3s ease-in-out;
+          @include imgPd(288, 384);
+
+          img {
+            @include imgCover;
+            border-radius: 0.6rem;
+          }
+        }
+      }
+
+      .card-body {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        @include max(1200px) {
+          padding: 1rem;
+          box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
+          border-bottom-left-radius: 0.6rem;
+          border-bottom-right-radius: 0.6rem;
+        }
+
+        .title {
+          @include fz-18;
+          font-weight: 700;
+          margin-top: 1rem;
+        }
+
+        .color {
+          margin: 1rem 0;
+
+          font-weight: 600;
+        }
+      }
+    }
+  }
+}
+
+// card item
+.card-item {
+  height: 100%;
+
+  .card-head {
+    overflow: hidden;
+    border-radius: 0.6rem;
+
+    &:hover {
+      .card-img {
+        transform: scale(1.2);
+      }
+    }
+
+    .card-img {
+      transition: all 0.3s ease-in-out;
+      @include imgPd(288, 384);
+
+      img {
+        @include imgCover;
+        border-radius: 0.6rem;
+      }
+    }
+  }
+
+  .card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    @include max(1200px) {
+      padding: 1rem;
+      box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
+      border-bottom-left-radius: 0.6rem;
+      border-bottom-right-radius: 0.6rem;
+    }
+
+    .title {
+      @include fz-18;
+      font-weight: 700;
+      margin-top: 1rem;
+    }
+
+    .color {
+      margin: 1rem 0;
+
+      font-weight: 600;
+    }
+  }
+}
+
+//body-card-text
+.body-card-text {
+  .title {
+    font-family: 'Beautique Display', sans-serif;
+    font-weight: 900;
+  }
+
+  .ph {
+    margin: 2rem 0;
+    @include fz-14;
+  }
+
+  .btn-card-text {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .btn-card-link {
+      position: relative;
+
+      &:hover {
+        &::after {
+          width: 50%;
+        }
+      }
+
+      &::after {
+        position: absolute;
+        content: '';
+        left: 0;
+        bottom: 0;
+        width: 0%;
+        height: 0.15rem;
+        background: linear-gradient(116.4deg, #a46e29 -33.17%, #f7e47f 33.65%);
+        transition: all 0.3s linear;
+      }
+    }
+
+    .btn-icon {
+      transition: all 0.3s linear;
+
+      &:hover {
+        transform: rotate(-90deg);
+      }
+    }
+
+    a {
+      @include fz-14;
+    }
+  }
+}

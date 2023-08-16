@@ -1,0 +1,287 @@
+.contact-head {
+  position: relative;
+
+  .contact-breadcrumb {
+    .breadcrumb {
+      border: 1px solid rgba(38, 38, 38, 1);
+      width: fit-content;
+      height: 6rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 999px;
+
+      @include max(600px) {
+        border: none;
+
+        .breadcrumb-link {
+          font-size: 1.4rem;
+        }
+      }
+    }
+  }
+
+  .contact-map {
+    margin-top: 4rem;
+    margin-bottom: 6rem;
+
+    iframe {
+      width: 100%;
+      min-height: 57rem;
+
+      @include max(600px) {
+        min-height: 40rem;
+      }
+    }
+  }
+
+  .contact-line {
+    position: absolute;
+    bottom: -3rem;
+    height: 1.4rem;
+    width: 100%;
+    background-color: $color-pri;
+  }
+}
+
+.contact-content {
+  padding: 8rem 0;
+
+  @include max(500px) {
+    padding-top: 2rem;
+  }
+
+  .left {
+    align-items: center;
+  }
+  .contact-item {
+    width: 50%;
+
+    @include max(1050px) {
+      width: 100%;
+
+      .title {
+        text-align: center;
+      }
+    }
+
+    .title {
+      font-family: 'Beautique Display', sans-serif;
+      text-transform: uppercase;
+
+      .text-name {
+        display: block;
+        font-family: 'Beautique Display', sans-serif;
+        font-size: 8rem;
+        font-weight: 700;
+        background: -webkit-linear-gradient(60deg, #a46e29 2.24%, #f7e47f 104.59%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+
+        @include max(500px) {
+          font-size: 5rem;
+        }
+      }
+
+      .text-dep {
+        display: block;
+        font-family: 'Beautique Display', sans-serif;
+        font-size: 4rem;
+        font-weight: 900;
+        background: -webkit-linear-gradient(#a46e29 2.24%, #f7e47f 104.59%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+
+        @include max(500px) {
+          font-size: 3rem;
+        }
+      }
+    }
+
+    .desc {
+      margin: 3rem 0 5rem 0;
+    }
+
+    .info {
+      .info-item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 1.6rem;
+
+        &:has(.info-text-item:hover) {
+          .info-img {
+            background-color: transparent;
+
+            i {
+              background: -webkit-linear-gradient(138.37deg, #b9d5bb 2.24%, #f7eb7f 104.59%);
+              -webkit-background-clip: text;
+              -webkit-text-fill-color: transparent;
+            }
+          }
+        }
+
+        .info-icon {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          height: 4.2rem;
+          width: 4.2rem;
+          border-radius: 50%;
+          background: linear-gradient(138.37deg, #a46e29 2.24%, #f7e47f 104.59%);
+          margin-right: 2rem;
+          padding: 0.1rem;
+          cursor: pointer;
+
+          &:hover {
+            .info-img {
+              background-color: transparent;
+
+              i {
+                background: -webkit-linear-gradient(138.37deg, #b9d5bb 2.24%, #f7eb7f 104.59%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+              }
+            }
+          }
+
+          .info-img {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background-color: $color-second-white;
+
+            i {
+              background: -webkit-linear-gradient(138.37deg, #a46e29 2.24%, #f7e47f 104.59%);
+              -webkit-background-clip: text;
+              -webkit-text-fill-color: transparent;
+            }
+          }
+        }
+
+        .info-text {
+          flex: 1;
+          span {
+            cursor: pointer;
+          }
+
+          &:hover ~ .info-icon {
+            border-radius: 10px;
+          }
+
+          @include max(400px) {
+            font-size: 1.2rem;
+          }
+        }
+      }
+    }
+  }
+
+  .contact-form {
+    text-align: center;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    padding: 3rem;
+    border: radius 0.8rem;
+
+    .form-title {
+      font-size: 4.4rem;
+      font-weight: 900;
+      font-family: 'Beautique Display', sans-serif;
+      color: $color-pri;
+      margin-bottom: 4rem;
+
+      @include max(400px) {
+        font-size: 3rem;
+      }
+    }
+
+    .form-control {
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+
+      @include max(600px) {
+        width: 100%;
+      }
+
+      .form-fiel {
+        font-size: 1.4rem;
+        font-weight: 600;
+      }
+
+      input {
+        position: relative;
+        width: 100%;
+        font-size: 1.6rem;
+        color: $color-text;
+        padding: 1.3rem 0;
+        border-bottom: 1px solid $color-text;
+
+        &:focus {
+          border-color: rgba(164, 111, 41, 0.457);
+        }
+
+        &::placeholder {
+          color: rgba(38, 38, 38, 0.3);
+        }
+      }
+    }
+
+    .form-btn {
+      margin-top: 3rem;
+      display: flex;
+      justify-content: center;
+    }
+
+    .form-content {
+      margin-top: 4rem;
+
+      .form-title-content {
+        text-align: left;
+        margin-bottom: 1.2rem;
+
+        span {
+          font-size: 1.4rem;
+          font-weight: 600;
+        }
+      }
+
+      textarea {
+        width: 100%;
+        background-color: transparent;
+        border-radius: 0.4rem;
+        padding: 2rem;
+        font-size: 1.6rem;
+
+        &:focus {
+          border-color: rgba(164, 111, 41, 0.457);
+        }
+
+        &::placeholder {
+          color: rgba(38, 38, 38, 0.3);
+        }
+      }
+    }
+  }
+}
+
+// overwrite select2
+.form-control .select2-container--default .select2-selection--single {
+  border: none;
+  text-align: left;
+}
+
+.form-control span.select2.select2-container.select2-container--default {
+  border-bottom: 1px solid $color-text;
+}
+
+.form-control .select2-container .select2-selection--single .select2-selection__rendered {
+  padding-left: 0;
+}
+
+.form-control .select2-container {
+  border-radius: 0;
+}

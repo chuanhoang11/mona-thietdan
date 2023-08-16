@@ -1,0 +1,82 @@
+.banner-about {
+    min-height: calc(600/ 1728 * 100vw);
+    position: relative;
+
+    &-img {
+        position: absolute;
+        z-index: -1;
+        @include full;
+
+        img {
+            width: 98%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    .container {
+        min-height: inherit;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    &-content {
+        padding: 8rem 0;
+    }
+}
+
+.vms {
+    &-slider {
+        width: 100rem;
+        margin: 0 auto;
+        max-width: 100%;
+
+        .swiper {
+            padding: 2.5rem 0;
+            margin: -2.5rem 0;
+
+            &-slide {
+                overflow: visible;
+            }
+
+        }
+
+        .philo-col {
+            &:nth-child(2) {
+                overflow: visible;
+            }
+        }
+
+        .philo-content {
+            box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+            height: calc(100% + 5rem);
+            margin-top: -2.5rem;
+        }
+    }
+}
+
+.media {
+    &-slider {
+        &-one {
+            margin-bottom: 2.4rem;
+
+            .media-img {
+                display: flex;
+                flex-direction: column;
+                height: 100%;
+
+                img {
+                    display: block;
+                    margin-top: auto;
+                }
+            }
+        }
+    }
+
+    .swiper {
+        &-slide {
+            width: fit-content;
+        }
+    }
+}

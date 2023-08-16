@@ -1,0 +1,28 @@
+.custom-line {
+  position: relative;
+  margin-top: 2rem;
+
+  @include max(500px) {
+    margin-top: 1rem;
+  }
+
+  .line-item {
+    position: absolute;
+    top: 0;
+    height: 1.4rem;
+    background-color: $color-pri;
+    width: calc(50% + 62rem);
+
+    @include max(1200px) {
+      width: 100%;
+    }
+
+    &.left {
+      left: 0;
+    }
+
+    &.right {
+      right: 0;
+    }
+  }
+}
