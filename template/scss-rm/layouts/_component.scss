@@ -343,3 +343,25 @@ table {
         }
     }
 }
+
+.sec-test {
+    display: flex;
+}
+
+.sec-item {
+    width: 100vw;
+    height: 100vh;
+    flex-shrink: 0;
+
+    &:nth-child(1) {
+        background-color: red;
+    }
+
+    &:nth-child(2) {
+        background-color: blue;
+    }
+
+    &:nth-child(3) {
+        background-color: green;
+    }
+}

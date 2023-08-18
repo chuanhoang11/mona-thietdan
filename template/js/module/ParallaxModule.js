@@ -60,4 +60,27 @@ export default function ParallaxModule() {
         });
     }
 
+
+
+    let secItem = gsap.utils.toArray(".sec-item");
+    console.log(secItem)
+    gsap.to(secItem, {
+        xPercent: (-100 * ((secItem.length - 1))),
+        opacity: 1,
+        ease: "none",
+        scrollTrigger: {
+            trigger: ".sec-test",
+            pin: false,
+            start: "top center",
+            markers: true,
+            scrub: 1,
+            snap: {
+                snapTo: 1 / (secItem.length - 1),
+                duration: { min: 1, max: 2 },
+                delay: 0
+            },
+            end: "center center",
+        }
+    });
+
 }

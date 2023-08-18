@@ -406,6 +406,63 @@ export default function SwiperModule() {
       }
     }
   });
+
+  const bnmSliders = document.querySelectorAll('.bnm-slider')
+  if (bnmSliders) {
+    bnmSliders.forEach(item => {
+      const swiper = item.querySelector('.swiper')
+      const pagi = item.querySelector('.swiper-pagination')
+      const next = item.querySelector('.swiper-next')
+      const prev = item.querySelector('.swiper-prev')
+
+      var bnmSlider = new Swiper(swiper, {
+        slidesPerView: 1,
+        spaceBetween: 0,
+        // loopedSlides: 6,
+        loop: true,
+        autoplay: {
+          delay: 5000
+        },
+        pagination: {
+          el: pagi,
+          type: "bullets",
+          clickable: true,
+        },
+        navigation: {
+          nextEl: next,
+          prevEl: prev,
+        },
+        speed: 1000,
+        effect: "coverflow",
+        grabCursor: true,
+        parallax: true,
+        centeredSlides: true,
+        coverflowEffect: {
+          rotate: 0.05,
+          depth: 0,
+          stretch: 0,
+          modifier: 1,
+          slideShadows: !1,
+        },
+        on: {
+          init: function (e) {
+            let swiper = this;
+            for (let i = 0; i < swiper.slides.length; i++) {
+              $(swiper.slides[i])
+                .find(".bnm-img")
+                .attr({
+                  "data-swiper-parallax": 0.9 * swiper.width,
+                  "data-swiper-paralalx-opacity": 0.1,
+                });
+            }
+          },
+          resize: function () {
+            this.update();
+          },
+        },
+      });
+    })
+  }
   // Slider Control
   // topsSliderMain.controller.control = topSliderThumb;
   // topSliderThumb.controller.control = topsSliderMain;

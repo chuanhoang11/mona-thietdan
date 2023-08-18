@@ -326,7 +326,7 @@ textarea {
 }
 
 .main {
-  min-height: 200vh;
+  min-height: 68vh;
 }
 .main.have-pd {
   padding-top: var(--size-hd);
@@ -9447,6 +9447,25 @@ table .status.cancle {
   transition: 0.3s ease-in-out;
 }
 
+.sec-test {
+  display: flex;
+}
+
+.sec-item {
+  width: 100vw;
+  height: 100vh;
+  flex-shrink: 0;
+}
+.sec-item:nth-child(1) {
+  background-color: red;
+}
+.sec-item:nth-child(2) {
+  background-color: blue;
+}
+.sec-item:nth-child(3) {
+  background-color: green;
+}
+
 .mb-0 {
   margin-bottom: 0 !important;
 }
@@ -11332,6 +11351,85 @@ table .status.cancle {
 }
 .media .swiper-slide {
   width: fit-content;
+}
+
+.contact-content .contact-item .info .info-item .info-icon .info-img img {
+  border-radius: unset;
+  width: 2rem;
+}
+
+.custom-banner .custom-banner-main .banner-wrapper {
+  min-height: 43.9814814815vw;
+}
+@media screen and (max-width: 700px) {
+  .custom-banner .custom-banner-main .banner-wrapper {
+    min-height: 80vw;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .custom-banner .custom-banner-main .banner-wrapper .mini-content .mini-content-img {
+    width: 20%;
+  }
+}
+
+.bnm {
+  min-height: 43.9814814815vw;
+  position: relative;
+}
+.bnm .container {
+  min-height: inherit;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.bnm .hbn-content {
+  padding: 10rem 0;
+}
+.bnm .hbn-content .hbn-title::before {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.5);
+}
+.bnm .hbn-content .hbn-title.is-inview::before {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.bnm-slider {
+  position: absolute;
+  z-index: -1;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+}
+.bnm-slider::before {
+  content: "";
+  position: absolute;
+  background: linear-gradient(270deg, rgba(46, 23, 0, 0.5) 0%, rgba(246, 221, 123, 0) 20.06%, rgba(246, 221, 123, 0) 80.15%, rgba(46, 23, 0, 0.5) 100%);
+  z-index: 1;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+}
+.bnm-slider .swiper {
+  height: 100%;
+}
+.bnm-slider .swiper-wrapper {
+  height: 100%;
+}
+.bnm-slider .swiper-slide {
+  height: 100%;
+}
+
+.bnm-img {
+  height: 100%;
+}
+.bnm-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 /*# sourceMappingURL=style-rm.css.map */

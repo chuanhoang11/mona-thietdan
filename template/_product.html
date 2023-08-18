@@ -14,71 +14,143 @@
 
 <body>
   <!-- Header -->
-  <header class="header">
-    <!-- Cấu trúc html menu -->
+  <header class="hd">
     <div class="container">
-      <div class="header-wrapper">
-        <div class="header-menu">
-          <input type="checkbox" id="menu-input" />
-          <div class="menu-icon">
-            <label for="menu-input" class="menu-btn"></label>
-          </div>
-          <!-- menu mobile -->
-          <div class="menu-mobile">
-            <div class="overlay-mobile"></div>
-            <ul class="footer-nav-list">
-              <li class="footer-nav-link">
-                <a href=""> Trang chủ </a>
-              </li>
-              <li class="footer-nav-link dropdown">
-                <a href="" class="menu-link"> Sản phẩm </a>
-                <ul class="footer-nav-list">
-                  <li class="footer-nav-link">
-                    <a href="" class="menu-link"> Sản phẩm 1 </a>
-                  </li>
-                  <li class="footer-nav-link">
-                    <a href="" class="menu-link">Sản phẩm 2 </a>
-                  </li>
-                </ul>
-              </li>
-              <li class="footer-nav-link">
-                <a href="" class="menu-link"> Quy trình </a>
-              </li>
-              <li class="footer-nav-link">
-                <a href="" class="menu-link"> Tin tức </a>
-              </li>
-              <li class="footer-nav-link">
-                <a href="" class="menu-link"> Liên hệ </a>
-              </li>
-            </ul>
+      <div class="hd-wr">
+        <div class="hd-burger" id="hamburger">
+          <div class="burger">
+            <div class="hamburger">
+              <span class="line"></span>
+              <span class="line"></span>
+            </div>
           </div>
         </div>
-        <div class="header-logo">
-          <a href="" alt="logo" class="logo-link">
-            <img src="./assets/images/logo.png" alt="" />
-          </a>
+        <a href="" class="custom-logo-link">
+          <img src="./assets/img/logo.png" alt="">
+        </a>
+        <div class="lg">
+          <div class="lg-head">
+            <img src="./assets/img/lg-1.svg" alt="">
+            <span class="text">
+              VN
+            </span>
+          </div>
+          <div class="lg-list">
+            <div class="lg-item">
+              <a href="" class="lg-link">
+                <img src="./assets/img/lg-1.svg" alt="">
+                <span class="text">
+                  VN
+                </span>
+              </a>
+            </div>
+          </div>
         </div>
-        <div class="lang">
-          <div class="lang-head lang-item">
-            <img src="./assets/images/flag-vn.png" alt="" />
-            <span class="text"> VN </span>
+      </div>
+    </div>
+    <div class="mobile-overlay"></div>
+    <div class="mobile">
+      <div class="mobile-con">
+        <div class="mobile-wr">
+          <div class="mobile-nav">
+            <div class="menu-nav">
+              <ul class="menu-list">
+                <li class="menu-item current-menu-item">
+                  <a href="" class="menu-link">
+                    Trang chủ
+                  </a>
+                </li>
+                <li class="menu-item">
+                  <a href="" class="menu-link">
+                    Giới thiệu
+                  </a>
+                </li>
+                <li class="menu-item dropdown">
+                  <a href="" class="menu-link">
+                    Sản phẩm
+                  </a>
+                  <ul class="menu-list">
+                    <li class="menu-item">
+                      <a href="" class="menu-link">
+                        DemoSp
+                      </a>
+                    </li>
+                    <li class="menu-item">
+                      <a href="" class="menu-link">
+                        DemoSp
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="menu-item">
+                  <a href="" class="menu-link">
+                    Quy trình
+                  </a>
+                </li>
+                <li class="menu-item">
+                  <a href="" class="menu-link">
+                    Tin tức
+                  </a>
+                </li>
+                <li class="menu-item">
+                  <a href="" class="menu-link">
+                    Liên hệ
+                  </a>
+                </li>
+              </ul>
+            </div>
           </div>
-          <div class="lang-list">
-            <a href="" class="lang-item active">
-              <img src="./assets/images/flag-vn.png" alt="" />
-              <span class="lang-link"> EN </span>
-            </a>
-            <a href="" class="lang-item">
-              <img src="./assets/images/flag-vn.png" alt="" />
-              <span class="lang-link"> VN </span>
-            </a>
-          </div>
+        </div>
+        <div class="mobile-td">
+          <img src="./assets/img/mb-td.png" alt="">
         </div>
       </div>
     </div>
   </header>
   <main class="main pt-none">
     <!--  -->
+    <section class="sec-bnm">
+      <div class="bnm">
+        <div class="bnm-slider">
+          <div class="swiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <div class="bnm-img">
+                  <img src="./assets/img/hbn-img-1.jpg" alt="">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="container">
+          <div class="bnm-content">
+            <div class="breadcrumb-cs">
+              <div class="container">
+                <div class="breadcrumb">
+                  <ul class="breadcrumb-list">
+                    <li class="breadcrumb-item">
+                      <a href="" class="breadcrumb-link">Trang chủ</a>
+                    </li>
+                    <li class="breadcrumb-item">
+                      <span class="breadcrumb-diamond">
+                        <img src="./assets/images/daimond.png" alt="" />
+                      </span>
+                      <a href="" class="breadcrumb-link">Tin tức</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="hbn-content">
+              <h1 class="hbn-title scroll-item" data-spl>
+                Tất cả sản phẩm
+              </h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <div class="re">
       <section class="custom-banner">
         <div class="custom-banner-main">
@@ -575,7 +647,10 @@
   <script src="./js/library/datetime/moment.min.js"></script>
   <script src="./js/library/datetime/daterangepicker.min.js"></script>
   <script src="./js/library/smoothscroll/SmoothScroll.min.js"></script>
+  <script src="./js/library/splitting/splitting.min.js"></script>
   <script src="./js/library/fancybox/fancybox.umd.js"></script>
+  <script src="./js/library/gsap/gsap.min.js"></script>
+  <script src="./js/library/gsap/ScrollTrigger.min.js"></script>
   <script src="./js/main.js" type="module"></script>
 </body>
 
